@@ -1,0 +1,36 @@
+<div class="container">
+  <form #formulario="ngForm" (ngSubmit)="onSubmitFormulario(formulario.value)">
+    <div class="form-group">
+      <label>Titulo</label>
+      <input class="form-control" name="titulo" type="text" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Texto</label>
+      <input class="form-control" name="texto" type="text" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Autor</label>
+      <input class="form-control" name="autor" type="text" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Imagen</label>
+      <input class="form-control" name="imagen" type="text" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Fecha</label>
+      <input class="form-control" name="fecha" type="text" ngModel>
+    </div>
+    <div class="form-group">
+      <label>Categoria</label>
+      <select class="form-control" name="categoria" ngModel>
+        <option value="general">General</option>
+        <option value="electronica">Electronica</option>
+        <option value="videojuegos">Videojuegos</option>
+        <option value="viajes">Viajes</option>
+      </select>
+    </div>
+    <button class="btn btn-dark" type="submit">Enviar</button>
+  </form>
+</div>
+
+{{ post | json}}
