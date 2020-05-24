@@ -1,51 +1,59 @@
 <div class="container">
   <div class="row">
-  <div class="col">
+  <div class="col-md-6 mx-auto">
       <div class="card mt-2">
         <div class="card-header text-center">
           <h3>Añade tu post</h3>
         </div>
         <div class="card-body">
-          <form [formGroup]="form" (ngSubmit)="onSubmitFormulario(form.value)">
-            <div class="row">
-              <div class="col-6">
-                <label>Titulo</label>
-                <input class="form-control form-control-sm" name="titulo" type="text" formControlName="titulo">
-              </div>
-                <div class="col-3">
-                  <label>Autor</label>
-                  <input class="form-control form-control-sm" name="autor" type="text" formControlName="autor">
-                </div>
-                <div class="col-3">
-                  <label>Imagen</label>
-                    <input class="form-control form-control-sm" name="imagen" type="text" formControlName="imagen">
-                </div>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <label>Texto</label>
-                <textarea class="form-control form-control-sm" name="texto" type="text" formControlName="texto"></textarea>
-              </div>
-              <div class="col-6">
-                <div class="row">
-                  <div class="col"><!--
+          <form [formGroup]="form" (ngSubmit)="onSubmitFormulario(form.value)" class="">
 
-                    <label>Fecha</label>
-                    <input class="form-control form-control-sm" name="fecha" type="date" formControlName="fecha"> -->
-                  </div>
-                  <div class="col">
+              <div class="form-group">
+                <label>Titulo</label>
+                <input placeholder="Titulo del post" class="form-control form-control-sm" name="titulo" type="text" formControlName="titulo" autofocus/>
+                    <div class="valid-feedback d-block" *ngIf="!form.controls.titulo.errors?.required && form.controls.titulo.touched">Valid.</div>
+                    <div class="invalid-feedback d-block" *ngIf="form.controls.titulo.errors?.required && form.controls.titulo.touched">Por favor rellena los campos</div>
+              </div>
+                <div class="form-group">
+                  <label>Autor</label>
+                  <input placeholder="Autor" class="form-control form-control-sm" name="autor" type="text" formControlName="autor">
+                  <div class="valid-feedback d-block" *ngIf="!form.controls.autor.errors?.required && form.controls.autor.touched">Valid.</div>
+                  <div class="invalid-feedback d-block" *ngIf="form.controls.autor.errors?.required && form.controls.autor.touched">Por favor rellena los campos</div>
+              </div>
+                  <div class="form-group">
+                  <label>Imagen</label>
+                  <input placeholder="http://..." class="form-control form-control-sm" name="imagen" type="text" formControlName="imagen">
+                  <div class="valid-feedback d-block" *ngIf="!form.controls.imagen.errors?.required && form.controls.imagen.touched">Valid.</div>
+                  <div class="invalid-feedback d-block" *ngIf="form.controls.imagen.errors?.required && form.controls.imagen.touched">Por favor rellena los campos</div>
+              </div>
+                  <div class="form-group">
+                <label>Texto</label>
+                <textarea rows="6" placeholder="Max 300 caracteres" class="form-control form-control-sm" name="texto" type="text" formControlName="texto"></textarea>
+                <div class="valid-feedback d-block" *ngIf="!form.controls.texto.errors?.required && form.controls.texto.touched">Valid.</div>
+                <div class="invalid-feedback d-block" *ngIf="form.controls.texto.errors?.required && form.controls.texto.touched">Por favor rellena los campos</div>
+          </div>
+
+                 <!-- <div class="form-group">
+                     <label>Fecha</label>
+                    <input placeholder="Fecha" class="form-control form-control-sm" name="fecha" type="date" formControlName="fecha">
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Por favor rellena los campos</div>
+                  </div>-->
+                    <div class="form-group">
                   <label>Categoria</label>
                     <select class="form-control form-control-sm" name="categoria" formControlName="categoria">
+                      <option selected="selected" value="">Selecciona una categoria</option>
                       <option value="general">General</option>
                       <option value="electronica">Electronica</option>
                       <option value="videojuegos">Videojuegos</option>
                       <option value="viajes">Viajes</option>
                     </select>
+                    <div class="valid-feedback d-block" *ngIf="!form.controls.categoria.errors?.required && form.controls.categoria.touched">Valid.</div>
+                    <div class="invalid-feedback d-block" *ngIf="form.controls.categoria.errors?.required && form.controls.categoria.touched">Por favor selecciona una categoria</div>
+
                   </div>
-                </div>
-              </div>
-            </div>
-            <button class="btn btn-dark" type="submit">Enviar</button>
+
+            <button class="btn btn-dark" type="submit" [disabled]="!form.valid">Enviar</button>
           </form>
         </div>
       </div>

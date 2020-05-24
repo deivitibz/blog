@@ -16,16 +16,17 @@ export class FormularioComponent implements OnInit {
   form: FormGroup;
 
   constructor(private postService: PostService, private router: Router) {
-    ;
+
     this.form = new FormGroup({
       titulo: new FormControl('', Validators.required),
       texto: new FormControl('', Validators.required),
       autor: new FormControl('', Validators.required),
-      imagen: new FormControl('', Validators.required),
-      /*
-      fecha: new FormControl('', Validators.required), */
+      imagen: new FormControl('', Validators.required),/*
+      fecha: new FormControl('', Validators.required),  */
       categoria: new FormControl('', Validators.required),
-    })
+    });
+
+
 
     this.allPosts = [];
   }

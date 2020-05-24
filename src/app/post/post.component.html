@@ -14,28 +14,27 @@
  -->
 <div class="container-fluid">
   <div class="card mt-3" *ngFor="let post of posts; let indice = index">
-    <div class="card-body bg-light">
-      <div class="text-center">
-        <h3>titulo</h3>
-
-        <p>autor<p>
+    <div class="card-body bg-light px-0 pt-0">
+      <div class="w-100 mx-auto mb-5 position-relative">
+        <div class="autor position-absolute text-right">
+          <p>posted by: {{post.autor}}</p>
+        </div>
+        <div class="categoria">
+          <p>{{post.categoria}}</p>
+        </div>
+        <img class="card-img-top" [src]="post.imagen" alt="">
       </div>
-
-
-      <div class="w-100 mx-auto mb-5 px-5">
-        <img class="card-img-top" src="https://picsum.photos/id/{{randomImage}}/300/120" alt="">
-      </div>
-
       <div class="px-5">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam minus tempora. Possimus commodi tempore nisi nemo iste neque optio vel eaque veritatis quasi at, culpa atque dolores est beatae.</p>
+        <h3 class="">{{post.titulo}}</h3>
+        <hr>
+        <p class="py-3">{{post.texto}}</p>
       </div>
-
-
       <div class="d-flex justify-content-between px-5">
-        <strong>{{post.fecha | date:"EEEE dd LLLL yy" }}</strong>
+        <div class="autor">
+          <p>posted on: {{post.fecha | date:"EEEE , dd LLLL yy" }}</p>
+        </div>
         <button (click)="deletePost(indice)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
       </div>
-
     </div>
   </div>
 
