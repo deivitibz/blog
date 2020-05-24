@@ -1,1 +1,24 @@
-<p>blog works!</p>
+<div class="container-fluid">
+  <div class="row p-5">
+    <div class="col-8">
+      <app-post [posts]="allPosts"></app-post>
+    </div>
+    <div class="col-4 mt-3">
+      <ul class="list-group">
+        <!-- <li class="list-group-item" *ngFor="let categoria of categorias">
+          <i class="fas fa-laptop"></i> {{categoria}}
+        </li> -->
+        <li class="list-group-item"><i class="fas fa-laptop"></i> Electronica</li>
+        <li class="list-group-item"><i class="fab fa-playstation"></i> Videojuegos</li>
+        <li class="list-group-item"><i class="fas fa-suitcase-rolling"></i> Viajes</li>
+        <li class="list-group-item"><i class="fas fa-igloo"></i> General</li>
+        <li class="list-group-item"><i class="fab fa-bitcoin"></i> Inversiones</li>
+      </ul>
+      <button class="btn btn-secondary btn-block my-2">Añadir un nuevo post</button>
+    </div>
+<!--     <div class="col-4">
+      <app-formulario></app-formulario>
+    </div> -->
+  </div>
+</div>
+

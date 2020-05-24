@@ -1,0 +1,42 @@
+<!-- <div class="d-flex">
+  <figure class="col-4">
+    <img class="w-100 h-auto" src="https://picsum.photos/id/684/600/400" alt="">
+  </figure>
+  <article class="col-8 d-flex flex-column justify-content-between">
+    <h3>titulo</h3>
+    <p>texto</p>
+    <div class="d-flex justify-content-between">
+      <p>autor</p>
+      <p>fecha</p>
+    </div>
+  </article>
+</div>
+ -->
+<div class="container-fluid">
+  <div class="card mt-3" *ngFor="let post of posts; let indice = index">
+    <div class="card-body bg-light">
+      <div class="text-center">
+        <h3>titulo</h3>
+
+        <p>autor<p>
+      </div>
+
+
+      <div class="w-100 mx-auto mb-5 px-5">
+        <img class="card-img-top" src="https://picsum.photos/id/{{randomImage}}/300/120" alt="">
+      </div>
+
+      <div class="px-5">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veniam minus tempora. Possimus commodi tempore nisi nemo iste neque optio vel eaque veritatis quasi at, culpa atque dolores est beatae.</p>
+      </div>
+
+
+      <div class="d-flex justify-content-between px-5">
+        <strong>{{post.fecha | date:"EEEE dd LLLL yy" }}</strong>
+        <button (click)="deletePost(indice)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+</div>

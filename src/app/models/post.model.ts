@@ -12,7 +12,7 @@ export class Post {
     this.titulo = titulo;
     this.texto = texto;
     this.autor = autor;
-    this. imagen = imagen;
+    this.imagen = imagen;
     this.fecha = fecha;
     this.categoria = categoria;
 
