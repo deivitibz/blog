@@ -19,3 +19,39 @@
 .dashboard-card-content {
   text-align: center;
 }
+
+
+.autor {
+  width: auto;
+  height: auto;
+  box-sizing: content-box;
+  padding: 0;
+  position: relative;
+  background: #bd213090;
+  color: #fafafa;
+  right: 0;
+
+}
+
+.autor p{
+  padding: 10px;
+  margin: 0;
+}
+
+.categoria{
+  width: 20%;
+  height: auto;
+  box-sizing: content-box;
+  padding: 0;
+  position: absolute;
+  background: #30303090;
+  color: #fafafa;
+  left: 0;
+  text-align: center;
+
+}
+
+.categoria p{
+  margin: 0;
+  padding: 10px;
+}

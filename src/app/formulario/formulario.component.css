@@ -1,0 +1,19 @@
+input,textarea,select{
+  border: none;
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+  width: 100%;
+  margin: auto 0 auto auto;
+  outline: none;
+}
+
+.form-group{
+  margin-bottom: 3em;
+}
+
+input:focus,textarea:focus,select:focus{
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: #30303030;
+}
